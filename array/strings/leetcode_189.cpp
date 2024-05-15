@@ -21,3 +21,17 @@ public:
         nums[i]=spare2[i-k]; 
     }
 };
+
+// or
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        vector<int> spare(n);
+        for(int i=0;i<n ;i++)
+        spare[(i+k)%n] = nums[i];
+
+        nums=spare;
+    }
+};
